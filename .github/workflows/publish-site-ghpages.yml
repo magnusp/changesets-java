@@ -16,9 +16,9 @@ jobs:
         - name: Publish to GitHub Pages
           shell: bash
           run: |
-            ssh-add
-            git config user.name github-actions[bot]
-            git config user.email github-actions[bot]@users.noreply.github.com
+            echo "Publishing as ${GITHUB_ACTOR}"
+            git config --global user.name "${GITHUB_ACTOR}"
+            git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
             ./mvnw --batch-mode --no-transfer-progress install --file pom.xml
             cd changesets-maven-plugin
             ../mvnw --batch-mode --no-transfer-progress clean site scm-publish:publish-scm
