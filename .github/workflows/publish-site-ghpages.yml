@@ -17,8 +17,6 @@ jobs:
             settings-path: ${{ github.workspace }}
         - name: Publish to GitHub Pages
           run: |
-            git config --global user.name  "github-actions[bot]"
-            git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
             ./mvnw --batch-mode --no-transfer-progress install --file pom.xml
             cd changesets-maven-plugin
             ../mvnw --batch-mode --no-transfer-progress clean site scm-publish:publish-scm -s $GITHUB_WORKSPACE/settings.xml
