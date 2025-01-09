@@ -17,5 +17,6 @@ jobs:
             settings-path: ${{ github.workspace }}
         - name: Publish to GitHub Pages
           run: |
+            ./mvnw --batch-mode --no-transfer-progress install --file pom.xml
             cd changesets-maven-plugin
-            ../mvnw --batch-mode clean site scm-publish:publish-scm
+            ../mvnw --batch-mode --no-transfer-progress clean site scm-publish:publish-scm
