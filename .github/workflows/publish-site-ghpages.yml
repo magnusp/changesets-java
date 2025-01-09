@@ -18,4 +18,4 @@ jobs:
         - name: Publish to GitHub Pages
           run: |
             cd changesets-maven-plugin
-            ./mvnw --batch-mode clean site scm-publish:publish-scm
+            ../mvnw --batch-mode clean site scm-publish:publish-scm
