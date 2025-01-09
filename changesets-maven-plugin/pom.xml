@@ -15,7 +15,7 @@
     <distributionManagement>
         <site>
             <id>github-changesets-java</id>
-            <url>scm:git:scm:git:https://${env.GITHUB_ACTOR}:${env.GITHUB_TOKEN}@github.com/magnusp/changesets-java.git</url>
+            <url>scm:git:https://github.com/magnusp/changesets-java.git</url>
         </site>
     </distributionManagement>
 
